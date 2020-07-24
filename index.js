@@ -6,7 +6,7 @@ const clueMsg = document.getElementById('clue');
 const gameBoard1 = document.getElementById("game-1")
 
 let gameInit = 0;
-const gameAnswerOne = [1,14,6,15,7,4,11,2,5,13,10,9,8,3,12,16];
+const gameAnswerOne = [1,13,8,23,21,6,24,9,3,19,5,16,10,14,4,11,7,15,22,18,2,20,12,17,25];
 
 Sortable.create(gameBoard1,{
   animation: 150,
@@ -19,10 +19,10 @@ Sortable.create(gameBoard1,{
   store: {
     set: (sortable) => {
       const orden = sortable.toArray();
+      console.log("orden: ",orden.join(","));
+      console.log("respuesta: ", gameAnswerOne.join(","));
       if(orden.join(",") === gameAnswerOne.join(",")) {
         clueMsg.innerHTML = `¡Excelente!, ahora dile a tu jefatura cual es el mensaje.`
-        console.log("orden: ",orden.join(","));
-        console.log("respuesta: ", gameAnswerOne.join(","));
       }
     }
   }
