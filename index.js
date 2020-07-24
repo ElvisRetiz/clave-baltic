@@ -19,8 +19,6 @@ Sortable.create(gameBoard1,{
   store: {
     set: (sortable) => {
       const orden = sortable.toArray();
-      console.log("orden: ",orden.join(","));
-      console.log("respuesta: ", gameAnswerOne.join(","));
       if(orden.join(",") === gameAnswerOne.join(",")) {
         clueMsg.innerHTML = `¡Excelente!, ahora dile a tu jefatura cual es el mensaje.`
       }
